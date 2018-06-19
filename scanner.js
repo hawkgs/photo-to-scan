@@ -33,13 +33,13 @@
         this._ctx.filter = `grayscale(${this._grayscale}) brightness(${this._brightness})`;
         this._ctx.drawImage(img, 0, 0, img.width, img.height);
 
-        this._normalizeWhite(img.width, img.height);
+        this._equalizeWhite(img.width, img.height);
       };
 
       img.src = imageSource;
     }
 
-    _normalizeWhite(width, height) {
+    _equalizeWhite(width, height) {
       const imgData = this._ctx.getImageData(0, 0, width, height);
 
       for (let y = 0; y < height; y += 1) {
