@@ -12,7 +12,7 @@
       this._ctx = this._canvas.getContext('2d');
 
       options = options || {};
-      this._lumaThreshold = options.luminanceThreshold || LUMINANCE_THRESHOLD;
+      this._luminanceThreshold = options.luminanceThreshold || LUMINANCE_THRESHOLD;
       this._grayscale = options.grayscale || GRAYSCALE;
       this._brightness = options.brightness || BRIGHTNESS;
 
@@ -45,9 +45,9 @@
       for (let y = 0; y < height; y += 1) {
         for (let x = 0; x < width; x += 1) {
           const rgb = this._getRGBIdxs(x, y, width);
-          const luma = this._getLuminance(imgData.data, rgb);
+          const luminance = this._getLuminance(imgData.data, rgb);
 
-          if (luma >= this._lumaThreshold) {
+          if (luminance >= this._luminanceThreshold) {
             imgData.data[rgb[0]] = imgData.data[rgb[1]] = imgData.data[rgb[2]] = WHITE;
           }
         }
