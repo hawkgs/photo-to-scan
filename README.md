@@ -18,9 +18,11 @@ Far from perfect. Made for demo purposes.
 ## How it works?
 
 ```javascript
-  const scan = new PhotoToScan('./image.jpg');
-  const canvas = scan.getCanvas();
-  ...
+const scan = new PhotoToScan('./image.jpg');
+const canvas = scan.getCanvas(); // Result canvas
+
+// e.g. Append it as a child
+element.appendChild(canvas);
 ```
 
 ## License
